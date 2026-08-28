@@ -7,21 +7,44 @@
 <title>Titas Sadid | Software Engineer</title>
 
 <style>
+
+/* =====================================================
+   COLOR SYSTEM
+===================================================== */
+
 :root{
-    --bg:#07111f;
-    --bg2:#0b1830;
-    --card:#10233d;
 
-    --cyan:#25f0d0;
-    --blue:#19c3ff;
-    --purple:#8b5cf6;
+    /* MAIN BACKGROUND - USER PROVIDED COLOR */
+    --main-bg:#D6FFB8;
+
+    /* DARK COLORS */
+    --dark:#071c13;
+    --dark2:#0b2b1d;
+    --dark3:#123b29;
+
+    /* GREEN */
+    --green:#20c875;
+    --green2:#0b9f59;
+    --lime:#8cff3f;
+
+    /* OTHER COLORS */
+    --teal:#00bfa6;
+    --purple:#7c3aed;
     --pink:#ec4899;
-    --gold:#ffd166;
 
-    --white:#f5f9ff;
-    --muted:#9bb0c7;
-    --line:#ffffff18;
+    /* TEXT */
+    --text:#092117;
+    --muted:#466154;
+    --white:#ffffff;
+
+    --card:#efffe5;
+    --border:#123b2930;
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -34,29 +57,39 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
     background:
+
     radial-gradient(
         circle at 10% 10%,
-        #19c3ff25,
-        transparent 30%
+        #ffffff90,
+        transparent 28%
     ),
+
     radial-gradient(
         circle at 90% 20%,
-        #8b5cf625,
+        #8cff3f55,
         transparent 30%
     ),
+
     radial-gradient(
-        circle at 50% 100%,
-        #25f0d01c,
+        circle at 50% 90%,
+        #20c87535,
         transparent 35%
     ),
-    var(--bg);
 
-    color:var(--white);
-    line-height:1.6;
+    var(--main-bg);
+
+    color:var(--text);
+
     overflow-x:hidden;
+
+    line-height:1.6;
 }
 
 a{
@@ -64,8 +97,14 @@ a{
     color:inherit;
 }
 
+img{
+    max-width:100%;
+}
+
 .container{
+
     width:min(1140px,92%);
+
     margin:auto;
 }
 
@@ -74,42 +113,59 @@ section{
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:999;
 
-    background:#07111fe8;
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+    rgba(214,255,184,.86);
 
     backdrop-filter:blur(18px);
 
     border-bottom:
-    1px solid var(--line);
+    1px solid #09211725;
 }
 
 nav{
+
     height:78px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
+
+/* LOGO */
+
 .logo{
+
     display:flex;
+
     align-items:center;
-    gap:11px;
+
+    gap:12px;
 
     font-weight:900;
 }
 
 .logoIcon{
-    width:46px;
-    height:46px;
+
+    width:48px;
+    height:48px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:14px;
@@ -117,65 +173,92 @@ nav{
     color:white;
 
     background:
+
     linear-gradient(
         135deg,
-        var(--cyan),
-        var(--blue),
-        var(--purple)
+        var(--dark),
+        var(--green2),
+        var(--green)
     );
 
     box-shadow:
-    0 0 30px #19c3ff44;
+
+    0 10px 30px
+    #0b9f5938;
+}
+
+.logoText{
+
+    font-size:16px;
+
+    color:var(--dark);
+
+    letter-spacing:1px;
 }
 
 .logo small{
-    display:block;
 
-    color:#7189a2;
+    display:block;
 
     font-size:8px;
 
-    letter-spacing:2px;
+    color:var(--green2);
+
+    letter-spacing:3px;
 }
 
+
+/* NAV LINKS */
+
 .links{
+
     display:flex;
+
     gap:30px;
 }
 
 .links a{
+
     position:relative;
 
-    padding:29px 0;
+    padding:28px 0;
 
-    color:#9db0c4;
+    color:var(--dark);
 
     font-size:11px;
+
     font-weight:900;
 
     transition:.3s;
 }
 
 .links a:hover{
-    color:white;
+
+    color:var(--green2);
 }
 
 .links a::after{
+
     content:"";
 
     position:absolute;
 
     left:0;
-    bottom:20px;
+
+    bottom:19px;
 
     width:0;
-    height:2px;
+
+    height:3px;
+
+    border-radius:10px;
 
     background:
+
     linear-gradient(
         90deg,
-        var(--cyan),
-        var(--blue),
+        var(--green2),
+        var(--teal),
         var(--purple)
     );
 
@@ -183,23 +266,28 @@ nav{
 }
 
 .links a:hover::after{
+
     width:100%;
 }
 
 .menu{
+
     display:none;
 
-    color:var(--cyan);
-
-    font-size:25px;
+    font-size:28px;
 
     cursor:pointer;
+
+    color:var(--dark);
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
+
     min-height:700px;
 
     display:grid;
@@ -209,57 +297,77 @@ nav{
 
     align-items:center;
 
-    gap:30px;
+    gap:35px;
 }
 
-.kicker{
-    color:var(--cyan);
 
-    font-size:10px;
+/* SMALL TITLE */
+
+.kicker{
+
+    color:var(--green2);
+
+    font-size:11px;
 
     font-weight:900;
 
     letter-spacing:4px;
+
+    margin-bottom:15px;
 }
 
-.hero h1{
-    font-size:
-    clamp(48px,6.5vw,84px);
 
-    line-height:.94;
+/* HERO TITLE */
+
+.hero h1{
+
+    font-size:
+    clamp(48px,6vw,82px);
+
+    line-height:.93;
 
     letter-spacing:-4px;
 
     text-transform:uppercase;
 
-    margin-top:16px;
+    color:var(--dark);
 }
 
+
+/* GRADIENT TEXT */
+
 .gradient{
+
     background:
+
     linear-gradient(
         90deg,
-        var(--cyan),
-        var(--blue),
+        var(--green2),
+        var(--teal),
         var(--purple),
         var(--pink)
     );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
 }
 
+
+/* DESCRIPTION */
+
 .heroText{
-    max-width:580px;
 
-    margin:28px 0;
+    max-width:570px;
 
-    padding-left:18px;
+    margin:30px 0;
+
+    padding-left:20px;
 
     border-left:
-    3px solid var(--blue);
+    4px solid var(--green2);
 
     color:var(--muted);
 
@@ -267,10 +375,15 @@ nav{
 }
 
 .heroText strong{
-    color:white;
+
+    color:var(--dark);
 }
 
+
+/* BUTTONS */
+
 .btns{
+
     display:flex;
 
     gap:13px;
@@ -279,54 +392,73 @@ nav{
 }
 
 .btn{
+
     display:inline-block;
 
-    padding:15px 22px;
+    padding:
+    15px 23px;
 
-    border-radius:6px;
+    border-radius:7px;
 
-    color:#04101c;
+    color:white;
 
     font-size:11px;
 
     font-weight:900;
 
     background:
+
     linear-gradient(
         100deg,
-        var(--cyan),
-        var(--blue),
-        var(--purple)
+        var(--dark),
+        var(--green2),
+        var(--teal)
     );
 
     box-shadow:
-    0 12px 30px #19c3ff22;
+    0 12px 30px
+    #09211730;
 
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-4px);
+
+    transform:
+    translateY(-4px);
 
     box-shadow:
-    0 18px 40px #19c3ff35;
+    0 18px 40px
+    #09211742;
 }
 
-.outline{
-    background:transparent;
+.btn.outline{
 
-    color:white;
+    background:
+    transparent;
+
+    color:var(--dark);
 
     border:
-    1px solid #ffffff30;
+    2px solid var(--dark);
 
     box-shadow:none;
 }
 
+.btn.outline:hover{
 
-/* ================= PROFILE IMAGE ================= */
+    color:white;
+
+    background:var(--dark);
+}
+
+
+/* =====================================================
+   HERO IMAGE AREA
+===================================================== */
 
 .visual{
+
     height:600px;
 
     display:grid;
@@ -337,8 +469,10 @@ nav{
 }
 
 .photoBox{
-    width:530px;
-    height:530px;
+
+    width:540px;
+
+    height:540px;
 
     display:grid;
 
@@ -348,41 +482,58 @@ nav{
 }
 
 
-/* OUTER GLOW */
+/* LARGE GREEN CIRCLE */
 
 .photoBox::before{
+
     content:"";
 
     position:absolute;
 
-    width:480px;
-    height:480px;
+    width:475px;
+
+    height:475px;
 
     border-radius:50%;
 
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffffffb0,
+        #8cff3f60
+    );
+
     border:
-    2px solid #19c3ff55;
+    2px solid #0b9f5940;
 
     box-shadow:
-    0 0 90px #19c3ff20,
-    inset 0 0 80px #8b5cf620;
+
+    0 30px 70px
+    #0b9f5930,
+
+    inset
+    0 0 50px
+    #ffffff80;
 }
 
 
 /* ROTATING RING */
 
 .photoBox::after{
+
     content:"";
 
     position:absolute;
 
     width:515px;
+
     height:515px;
 
     border-radius:50%;
 
     border:
-    2px dashed #8b5cf677;
+    3px dashed #7c3aed80;
 
     animation:
     rotate 18s linear infinite;
@@ -401,11 +552,13 @@ nav{
 }
 
 
-/* PHOTO */
+/* PROFILE PHOTO */
 
 .photo{
-    width:410px;
-    height:410px;
+
+    width:405px;
+
+    height:405px;
 
     object-fit:cover;
 
@@ -414,15 +567,19 @@ nav{
     border-radius:50%;
 
     border:
-    8px solid white;
+    9px solid white;
 
     position:relative;
 
-    z-index:3;
+    z-index:5;
 
     box-shadow:
-    0 0 0 10px #19c3ff18,
-    0 30px 80px #0008;
+
+    0 0 0 10px
+    #20c87525,
+
+    0 30px 70px
+    #09211740;
 
     animation:
     floating 5s ease-in-out infinite;
@@ -436,140 +593,179 @@ nav{
     }
 
     50%{
-        transform:translateY(-11px);
+        transform:translateY(-12px);
     }
-
 }
 
 
-/* ================= FLOATING DOTS ================= */
+/* =====================================================
+   FLOATING DOTS
+===================================================== */
 
 .dot{
+
     position:absolute;
 
-    width:11px;
-    height:11px;
+    width:13px;
+
+    height:13px;
 
     border-radius:50%;
 
-    z-index:6;
+    z-index:10;
 }
 
 .d1{
-    left:30px;
-    top:55px;
 
-    background:var(--cyan);
+    left:30px;
+
+    top:70px;
+
+    background:var(--purple);
 
     box-shadow:
-    0 0 20px var(--cyan);
+    0 0 25px
+    #7c3aed80;
 
     animation:
-    move1 4s infinite;
+    float1 4s infinite;
 }
 
 .d2{
-    right:28px;
+
+    right:35px;
+
     top:110px;
 
     background:var(--pink);
 
     box-shadow:
-    0 0 20px var(--pink);
+    0 0 25px
+    #ec489980;
 
     animation:
-    move2 5s infinite;
+    float2 5s infinite;
 }
 
 .d3{
+
     left:65px;
+
     bottom:70px;
 
-    background:var(--gold);
+    background:var(--teal);
 
     box-shadow:
-    0 0 20px var(--gold);
+    0 0 25px
+    #00bfa680;
 
     animation:
-    move3 4s infinite;
+    float3 4s infinite;
 }
 
-@keyframes move1{
+@keyframes float1{
 
     50%{
         transform:
         translate(25px,30px);
 
-        opacity:.35;
+        opacity:.5;
     }
-
 }
 
-@keyframes move2{
+@keyframes float2{
 
     50%{
         transform:
         translate(-25px,25px);
 
-        opacity:.4;
+        opacity:.5;
     }
-
 }
 
-@keyframes move3{
+@keyframes float3{
 
     50%{
         transform:
         translate(20px,-25px);
 
-        opacity:.45;
+        opacity:.5;
     }
-
 }
 
 
-/* PHOTO BADGE */
+/* =====================================================
+   IMAGE BADGE
+===================================================== */
 
 .badge{
+
     position:absolute;
 
-    right:0;
-    bottom:40px;
+    right:-5px;
 
-    z-index:8;
+    bottom:45px;
 
-    padding:14px 20px;
+    z-index:20;
 
-    border-radius:10px;
+    padding:
+    15px 22px;
 
-    background:#10233df5;
+    border-radius:12px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--dark),
+        var(--dark2)
+    );
+
+    color:white;
 
     border:
-    1px solid #19c3ff44;
+    2px solid #20c87580;
 
     box-shadow:
-    0 15px 40px #0006;
+    0 20px 45px
+    #09211740;
+
+    animation:
+    badgeFloat 4s ease-in-out infinite;
+}
+
+@keyframes badgeFloat{
+
+    50%{
+        transform:
+        translateY(-7px);
+    }
 }
 
 .badge b{
+
     display:block;
 
-    color:var(--cyan);
+    color:var(--lime);
 
     font-size:14px;
 }
 
 .badge small{
-    color:#9bb0c7;
+
+    color:#c9e4d5;
 
     font-size:10px;
 }
 
 
-/* ================= TITLES ================= */
+/* =====================================================
+   SECTION TITLES
+===================================================== */
 
 .kicker2{
-    color:var(--cyan);
+
+    color:var(--green2);
 
     font-size:10px;
 
@@ -579,35 +775,44 @@ nav{
 }
 
 .title{
-    font-size:45px;
+
+    font-size:47px;
 
     line-height:1;
 
+    color:var(--dark);
+
     margin:
-    10px 0 48px;
+    10px 0 50px;
 
     text-transform:uppercase;
 }
 
 .title span{
+
     background:
+
     linear-gradient(
         90deg,
-        var(--cyan),
-        var(--blue),
+        var(--green2),
+        var(--teal),
         var(--purple)
     );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
 }
 
 
-/* ================= ABOUT ================= */
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .grid2{
+
     display:grid;
 
     grid-template-columns:
@@ -617,131 +822,173 @@ nav{
 }
 
 .copy{
+
     color:var(--muted);
 
     font-size:14px;
 }
 
 .copy p{
+
     margin-bottom:18px;
 }
 
 .copy strong{
-    color:white;
+
+    color:var(--dark);
 }
 
+
+/* INFO BOX */
+
 .info{
+
     display:grid;
 
     gap:2px;
 
-    background:#19c3ff12;
-
-    border-radius:8px;
-
     overflow:hidden;
+
+    border-radius:10px;
+
+    background:
+    var(--dark);
 }
 
 .row{
+
     display:flex;
 
     justify-content:space-between;
 
     gap:15px;
 
-    padding:17px 19px;
+    padding:
+    17px 20px;
 
-    background:#10233dcc;
+    background:
+    #efffe5;
 
     font-size:12px;
+
+    transition:.3s;
+}
+
+.row:hover{
+
+    background:
+    #ffffff;
 }
 
 .row span{
-    color:#9bb0c7;
+
+    color:var(--green2);
+
+    font-weight:700;
 
     text-align:right;
 }
 
 
-/* ================= SERVICES ================= */
+/* =====================================================
+   SERVICES
+===================================================== */
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:19px;
+    gap:20px;
 }
 
 .card{
-    padding:30px;
+
+    padding:31px;
+
+    border-radius:12px;
 
     border:
-    1px solid var(--line);
-
-    border-radius:9px;
+    1px solid #09211720;
 
     background:
-    linear-gradient(
-        145deg,
-        #102a48e8,
-        #0c1d33e8
-    );
+    rgba(239,255,229,.85);
+
+    box-shadow:
+    0 15px 40px
+    #09211712;
 
     transition:.35s;
 }
 
 .card:hover{
+
     transform:
-    translateY(-8px);
+    translateY(-9px);
+
+    background:white;
 
     border-color:
-    #19c3ff55;
+    #20c87580;
 
     box-shadow:
-    0 20px 50px #0005;
+    0 25px 55px
+    #09211725;
 }
 
 .icon{
-    width:52px;
-    height:52px;
+
+    width:55px;
+
+    height:55px;
 
     display:grid;
+
     place-items:center;
 
-    border-radius:14px;
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple)
-    );
+    border-radius:15px;
 
     color:white;
 
-    font-size:20px;
+    font-size:19px;
 
-    margin-bottom:18px;
+    margin-bottom:19px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--dark),
+        var(--green2),
+        var(--teal)
+    );
 }
 
 .card h3{
+
     font-size:18px;
 
-    margin-bottom:8px;
+    color:var(--dark);
+
+    margin-bottom:9px;
 }
 
 .card p{
+
     color:var(--muted);
 
     font-size:13px;
 }
 
 
-/* ================= PROJECTS ================= */
+/* =====================================================
+   PROJECTS
+===================================================== */
 
 .projectGrid{
+
     display:grid;
 
     grid-template-columns:
@@ -751,28 +998,65 @@ nav{
 }
 
 .project{
-    padding:27px;
+
+    padding:30px;
+
+    min-height:240px;
+
+    border-radius:12px;
+
+    background:
+    var(--dark);
+
+    color:white;
 
     border:
-    1px solid var(--line);
+    1px solid #ffffff18;
 
-    border-radius:9px;
+    position:relative;
 
-    background:#10233dcc;
+    overflow:hidden;
 
-    transition:.3s;
+    transition:.35s;
+}
+
+.project::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:160px;
+
+    height:160px;
+
+    right:-70px;
+
+    top:-70px;
+
+    border-radius:50%;
+
+    background:
+    var(--green);
+
+    filter:blur(50px);
+
+    opacity:.35;
 }
 
 .project:hover{
-    transform:
-    translateY(-7px);
 
-    border-color:
-    #8b5cf655;
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 25px 55px
+    #09211745;
 }
 
 .tag{
-    color:var(--cyan);
+
+    color:var(--lime);
 
     font-size:9px;
 
@@ -782,22 +1066,27 @@ nav{
 }
 
 .project h3{
+
+    font-size:20px;
+
     margin:
-    10px 0 8px;
+    12px 0 9px;
 }
 
 .project p{
-    color:var(--muted);
+
+    color:#b8d4c4;
 
     font-size:13px;
 }
 
 .project a{
+
     display:inline-block;
 
-    margin-top:17px;
+    margin-top:20px;
 
-    color:var(--blue);
+    color:var(--cyan);
 
     font-size:10px;
 
@@ -805,109 +1094,134 @@ nav{
 }
 
 
-/* ================= EXPERIENCE ================= */
+/* =====================================================
+   EXPERIENCE
+===================================================== */
 
 .timeline{
-    border-left:
-    2px solid #19c3ff66;
 
-    padding-left:30px;
+    border-left:
+    3px solid var(--green2);
+
+    padding-left:32px;
 
     position:relative;
 }
 
 .timeline::before{
+
     content:"";
 
     position:absolute;
 
-    left:-7px;
+    left:-8px;
+
     top:5px;
 
-    width:12px;
-    height:12px;
+    width:13px;
+
+    height:13px;
 
     border-radius:50%;
 
-    background:var(--cyan);
+    background:
+    var(--purple);
 
     box-shadow:
-    0 0 0 7px #19c3ff16;
+    0 0 0 8px
+    #7c3aed25;
 }
 
 .date{
-    color:var(--gold);
+
+    color:var(--purple);
 
     font-size:10px;
 
     font-weight:900;
 
-    letter-spacing:2px;
+    letter-spacing:3px;
 }
 
 .timeline h3{
-    font-size:31px;
 
-    margin:7px 0;
+    color:var(--dark);
+
+    font-size:32px;
+
+    margin:
+    7px 0;
 }
 
 .timeline h4{
-    color:#b5c7d9;
+
+    color:var(--green2);
 
     margin-bottom:14px;
 }
 
 .timeline p{
+
     color:var(--muted);
 
     font-size:14px;
 
-    max-width:800px;
+    max-width:850px;
 }
 
 
-/* ================= SKILLS ================= */
+/* =====================================================
+   SKILLS
+===================================================== */
 
 .skills{
+
     display:grid;
 
     grid-template-columns:
     1fr 1fr;
 
-    gap:50px;
+    gap:55px;
 }
 
 .skill{
-    margin-bottom:25px;
+
+    margin-bottom:27px;
 }
 
 .skillTop{
+
     display:flex;
 
     justify-content:space-between;
 
+    margin-bottom:9px;
+
+    color:var(--dark);
+
     font-size:12px;
 
     font-weight:900;
-
-    margin-bottom:9px;
 }
 
 .skillTop span:last-child{
-    color:var(--cyan);
+
+    color:var(--green2);
 }
 
 .bar{
-    height:7px;
 
-    background:#19304a;
+    height:8px;
+
+    overflow:hidden;
 
     border-radius:20px;
 
-    overflow:hidden;
+    background:#09211720;
 }
 
 .bar i{
+
     display:block;
 
     width:0;
@@ -917,10 +1231,11 @@ nav{
     border-radius:20px;
 
     background:
+
     linear-gradient(
         90deg,
-        var(--cyan),
-        var(--blue),
+        var(--green2),
+        var(--teal),
         var(--purple)
     );
 
@@ -929,33 +1244,69 @@ nav{
 }
 
 
-/* ================= CONTACT ================= */
+/* =====================================================
+   CONTACT
+===================================================== */
 
 .contact{
+
     display:grid;
 
     grid-template-columns:
     1fr 1fr;
 
-    gap:45px;
+    gap:50px;
 
-    padding:45px;
+    padding:50px;
+
+    border-radius:15px;
 
     background:
+
     linear-gradient(
-        120deg,
-        #102a48ee,
-        #162542ee
+        135deg,
+        var(--dark),
+        var(--dark2)
     );
 
-    border:
-    1px solid #19c3ff2b;
+    color:white;
 
-    border-radius:12px;
+    box-shadow:
+    0 25px 70px
+    #09211735;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    right:-100px;
+
+    top:-100px;
+
+    border-radius:50%;
+
+    background:
+    var(--green);
+
+    filter:blur(80px);
+
+    opacity:.25;
 }
 
 .contact h2{
-    font-size:38px;
+
+    font-size:42px;
 
     line-height:1.05;
 
@@ -963,25 +1314,33 @@ nav{
 }
 
 .contact h2 span{
-    color:var(--cyan);
+
+    color:var(--lime);
 }
 
 .contact p{
-    color:var(--muted);
+
+    color:#b8d4c4;
 
     font-size:14px;
 
     margin:
-    18px 0 25px;
+    20px 0 27px;
 }
 
 .items{
+
     display:grid;
 
     gap:13px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .item{
+
     display:flex;
 
     align-items:center;
@@ -991,47 +1350,55 @@ nav{
     padding:14px;
 
     border:
-    1px solid var(--line);
+    1px solid #ffffff15;
 
-    background:#07111f88;
+    border-radius:9px;
 
-    border-radius:7px;
+    background:#ffffff0b;
 
     transition:.3s;
 }
 
 .item:hover{
+
     transform:
-    translateX(5px);
+    translateX(6px);
 
     border-color:
-    #19c3ff55;
+    #20c87560;
 }
 
 .ci{
-    width:42px;
-    height:42px;
 
-    border-radius:10px;
+    width:43px;
+
+    height:43px;
 
     display:grid;
 
     place-items:center;
 
-    background:
-    linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple)
-    );
+    border-radius:11px;
+
+    color:white;
 
     font-weight:900;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--green2),
+        var(--teal),
+        var(--purple)
+    );
 }
 
 .item small{
+
     display:block;
 
-    color:#7189a2;
+    color:#789888;
 
     font-size:9px;
 
@@ -1039,66 +1406,82 @@ nav{
 }
 
 .item strong{
+
     font-size:13px;
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-    padding:30px 0;
 
-    border-top:
-    1px solid var(--line);
+    padding:
+    30px 0;
 
-    color:#7189a2;
+    background:
+    var(--dark);
+
+    color:#8fa99a;
 
     font-size:11px;
 }
 
 footer .container{
+
     display:flex;
 
     justify-content:space-between;
+
+    gap:20px;
 }
 
 footer span{
-    color:var(--cyan);
+
+    color:var(--lime);
 }
 
 
-/* ================= WHATSAPP ================= */
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .wa{
+
     position:fixed;
 
-    right:24px;
-    bottom:24px;
+    right:25px;
 
-    width:62px;
-    height:62px;
+    bottom:25px;
 
-    border-radius:50%;
+    width:63px;
+
+    height:63px;
 
     display:grid;
 
     place-items:center;
 
-    z-index:999;
+    border-radius:50%;
+
+    z-index:9999;
 
     color:white;
 
     font-size:25px;
 
     background:
+
     linear-gradient(
         135deg,
-        #19d879,
-        #08a75b
+        #0b9f59,
+        #20c875
     );
 
     box-shadow:
-    0 12px 35px #19d87944;
+    0 15px 40px
+    #09211745;
 
     animation:
     pulse 2s infinite;
@@ -1107,27 +1490,35 @@ footer span{
 @keyframes pulse{
 
     50%{
-        box-shadow:
-        0 12px 35px #19d87944,
-        0 0 0 12px #19d8790d;
-    }
 
+        box-shadow:
+
+        0 15px 40px
+        #09211745,
+
+        0 0 0 13px
+        #20c87518;
+    }
 }
 
 
-/* ================= REVEAL ================= */
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
 
 .reveal{
+
     opacity:0;
 
     transform:
-    translateY(28px);
+    translateY(30px);
 
     transition:
     .8s ease;
 }
 
 .show{
+
     opacity:1;
 
     transform:
@@ -1135,28 +1526,39 @@ footer span{
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:850px){
 
     .links{
+
         display:none;
 
         position:absolute;
 
-        top:78px;
         left:0;
+
+        top:78px;
 
         width:100%;
 
         padding:
         10px 5%;
 
-        background:#07111f;
-
         flex-direction:column;
 
         gap:0;
+
+        background:
+        #D6FFB8f5;
+
+        backdrop-filter:
+        blur(15px);
+
+        border-bottom:
+        1px solid #09211725;
     }
 
     .links.show{
@@ -1164,7 +1566,7 @@ footer span{
     }
 
     .links a{
-        padding:13px 0;
+        padding:14px 0;
     }
 
     .menu{
@@ -1172,9 +1574,12 @@ footer span{
     }
 
     .hero{
+
         grid-template-columns:1fr;
 
         min-height:auto;
+
+        padding-top:70px;
     }
 
     .visual{
@@ -1194,59 +1599,72 @@ footer span{
 }
 
 
-/* ================= SMALL MOBILE ================= */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media(max-width:500px){
 
     .hero h1{
+
         font-size:46px;
 
         letter-spacing:-2px;
     }
 
     .photoBox{
+
         width:370px;
 
         height:420px;
     }
 
     .photo{
+
         width:315px;
+
         height:315px;
     }
 
     .photoBox::before{
+
         width:355px;
+
         height:355px;
     }
 
     .photoBox::after{
+
         width:380px;
+
         height:380px;
     }
 
     .badge{
+
         right:-5px;
 
         bottom:20px;
     }
 
     .title{
+
         font-size:35px;
     }
 
     .contact{
-        padding:28px;
+
+        padding:30px;
     }
 
     .contact h2{
-        font-size:31px;
+
+        font-size:32px;
     }
 
     footer .container{
-        flex-direction:column;
 
-        gap:10px;
+        flex-direction:column;
     }
 }
 
@@ -1257,19 +1675,21 @@ footer span{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
 <nav class="container">
 
-<a class="logo" href="#home">
+<a href="#home" class="logo">
 
 <div class="logoIcon">
 &lt;/&gt;
 </div>
 
-<div>
+<div class="logoText">
 
 TITAS SADID
 
@@ -1284,29 +1704,19 @@ SOFTWARE ENGINEER
 
 <div class="links" id="links">
 
-<a href="#home">
-HOME
-</a>
+<a href="#home">HOME</a>
 
-<a href="#about">
-ABOUT
-</a>
+<a href="#about">ABOUT</a>
 
-<a href="#services">
-SKILLS
-</a>
+<a href="#services">SERVICES</a>
 
-<a href="#projects">
-PROJECTS
-</a>
+<a href="#projects">PROJECTS</a>
 
-<a href="#experience">
-EXPERIENCE
-</a>
+<a href="#experience">EXPERIENCE</a>
 
-<a href="#contact">
-CONTACT
-</a>
+<a href="#skills">SKILLS</a>
+
+<a href="#contact">CONTACT</a>
 
 </div>
 
@@ -1321,7 +1731,9 @@ CONTACT
 
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero container" id="home">
 
@@ -1341,12 +1753,12 @@ BUILD
 
 <br>
 
-DIGITAL
+SMART
 
 <br>
 
 <span class="gradient">
-EXPERIENCES.
+SOFTWARE.
 </span>
 
 </h1>
@@ -1362,10 +1774,9 @@ a professional
 at
 <strong>Iqrasys Solutions Limited</strong>.
 
-I build reliable, scalable and
-user-friendly digital solutions
-through clean code and practical
-problem solving.
+I create reliable, scalable and
+user-friendly software solutions
+using modern development practices.
 
 </p>
 
@@ -1373,16 +1784,15 @@ problem solving.
 <div class="btns">
 
 <a
-class="btn"
 href="#projects"
+class="btn"
 >
 VIEW MY WORK →
 </a>
 
-
 <a
-class="btn outline"
 href="#contact"
+class="btn outline"
 >
 CONTACT ME
 </a>
@@ -1393,26 +1803,24 @@ CONTACT ME
 
 
 
-<!-- ================= PHOTO ================= -->
+<!-- PHOTO -->
 
 <div class="visual reveal">
 
 <div class="photoBox">
 
 
-<i class="dot d1"></i>
+<span class="dot d1"></span>
 
-<i class="dot d2"></i>
+<span class="dot d2"></span>
 
-<i class="dot d3"></i>
+<span class="dot d3"></span>
 
-
-<!-- YOUR PHOTO -->
 
 <img
-class="photo"
 src="titas.png"
-alt="Titas Sadid"
+class="photo"
+alt="Titas Sadid - Software Engineer"
 >
 
 
@@ -1423,7 +1831,7 @@ SOFTWARE ENGINEER
 </b>
 
 <small>
-IQrasys Solutions Limited
+Iqrasys Solutions Limited
 </small>
 
 </div>
@@ -1437,7 +1845,9 @@ IQrasys Solutions Limited
 
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section id="about">
 
@@ -1467,7 +1877,7 @@ ABOUT <span>ME</span>
 Hello! I’m
 <strong>Titas Sadid</strong>,
 
-a Software Engineer working at
+a Software Engineer at
 <strong>Iqrasys Solutions Limited</strong>.
 
 </p>
@@ -1475,23 +1885,31 @@ a Software Engineer working at
 
 <p>
 
-I focus on software development,
-problem solving, application design,
-clean coding and building practical
-digital products.
+I work with software development,
+technical problem solving,
+application design and digital
+solutions.
 
 </p>
 
 
 <p>
 
-My goal is to create software that is
-fast, maintainable, reliable and easy
-for users to understand.
+My professional approach focuses on
+writing clean and maintainable code,
+understanding business requirements
+and creating software that provides
+real value to users.
 
-I continuously improve my technical
-skills and follow modern development
-practices.
+</p>
+
+
+<p>
+
+I continuously work on improving my
+technical knowledge and learning
+modern technologies to build better
+software solutions.
 
 </p>
 
@@ -1570,7 +1988,7 @@ Software Development
 <div class="row">
 
 <b>
-Focus
+Professional Focus
 </b>
 
 <span>
@@ -1590,7 +2008,9 @@ Digital Solutions
 
 
 
-<!-- ================= SERVICES ================= -->
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
 <section id="services">
 
@@ -1624,9 +2044,9 @@ Software Development
 </h3>
 
 <p>
-Building clean, maintainable and
-practical software solutions for
-real-world requirements.
+Developing clean, scalable and
+maintainable software solutions
+for real-world requirements.
 </p>
 
 </div>
@@ -1644,9 +2064,9 @@ Problem Solving
 </h3>
 
 <p>
-Breaking complex requirements into
-efficient and understandable
-technical solutions.
+Analyzing complex technical
+problems and transforming them
+into practical solutions.
 </p>
 
 </div>
@@ -1660,13 +2080,13 @@ technical solutions.
 </div>
 
 <h3>
-Application Design
+Application Development
 </h3>
 
 <p>
-Designing user-friendly application
-structures with performance and
-maintainability in mind.
+Creating functional applications
+with focus on performance,
+usability and maintainability.
 </p>
 
 </div>
@@ -1680,7 +2100,7 @@ DB
 </div>
 
 <h3>
-Database Solutions
+Database Management
 </h3>
 
 <p>
@@ -1704,8 +2124,9 @@ API Integration
 </h3>
 
 <p>
-Connecting applications and services
-through clean API-based workflows.
+Connecting applications and
+services through efficient
+API-based architectures.
 </p>
 
 </div>
@@ -1723,9 +2144,9 @@ Testing & Debugging
 </h3>
 
 <p>
-Finding issues, improving reliability
-and helping applications deliver
-better experiences.
+Identifying bugs, improving
+performance and maintaining
+software reliability.
 </p>
 
 </div>
@@ -1739,7 +2160,9 @@ better experiences.
 
 
 
-<!-- ================= PROJECTS ================= -->
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
 <section id="projects">
 
@@ -1765,7 +2188,7 @@ MY <span>PROJECTS</span>
 <div class="project reveal">
 
 <div class="tag">
-WEB APPLICATION
+SOFTWARE DEVELOPMENT
 </div>
 
 <h3>
@@ -1773,9 +2196,9 @@ Business Management System
 </h3>
 
 <p>
-A modern software concept for
-managing business operations,
-users, records and workflows.
+A modern software solution concept
+designed to manage business
+operations, records and workflows.
 </p>
 
 <a href="#contact">
@@ -1789,7 +2212,7 @@ DISCUSS PROJECT →
 <div class="project reveal">
 
 <div class="tag">
-SOFTWARE SOLUTION
+WEB APPLICATION
 </div>
 
 <h3>
@@ -1798,8 +2221,8 @@ Smart Digital Platform
 
 <p>
 A scalable digital platform concept
-focused on performance, usability
-and clean interface design.
+focused on usability, performance
+and modern user experience.
 </p>
 
 <a href="#contact">
@@ -1821,9 +2244,9 @@ Workflow Automation
 </h3>
 
 <p>
-Automating repetitive processes to
-reduce manual work and improve
-organizational efficiency.
+A software concept designed to
+reduce repetitive work and improve
+organizational productivity.
 </p>
 
 <a href="#contact">
@@ -1841,7 +2264,9 @@ DISCUSS PROJECT →
 
 
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
 
 <section id="experience">
 
@@ -1883,13 +2308,14 @@ Iqrasys Solutions Limited
 
 Working on software development,
 technical problem solving,
-application improvement,
-system workflows and reliable
-software delivery.
+application development,
+system workflows and software
+improvement.
 
 Contributing to digital solutions
-with a focus on clean code,
-performance and maintainability.
+with focus on clean coding,
+performance, reliability and
+maintainability.
 
 </p>
 
@@ -1902,7 +2328,9 @@ performance and maintainability.
 
 
 
-<!-- ================= SKILLS ================= -->
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
 <section id="skills">
 
@@ -2059,7 +2487,7 @@ API Integration
 <div class="skillTop">
 
 <span>
-Debugging
+Testing & Debugging
 </span>
 
 <span>
@@ -2087,7 +2515,9 @@ Debugging
 
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section id="contact">
 
@@ -2137,10 +2567,10 @@ href="mailto:titassadid@example.com"
 SEND EMAIL →
 </a>
 
-
 <a
 class="btn outline"
 href="#home"
+style="color:white;border-color:white;"
 >
 BACK TO TOP
 </a>
@@ -2157,17 +2587,17 @@ BACK TO TOP
 <div class="item">
 
 <div class="ci">
-@
+&lt;/&gt;
 </div>
 
 <div>
 
 <small>
-EMAIL
+NAME
 </small>
 
 <strong>
-titassadid@example.com
+Titas Sadid
 </strong>
 
 </div>
@@ -2179,13 +2609,13 @@ titassadid@example.com
 <div class="item">
 
 <div class="ci">
-&lt;/&gt;
+SE
 </div>
 
 <div>
 
 <small>
-PROFESSION
+DESIGNATION
 </small>
 
 <strong>
@@ -2223,7 +2653,7 @@ Iqrasys Solutions Limited
 <div class="item">
 
 <div class="ci">
-◆
+DEV
 </div>
 
 <div>
@@ -2250,11 +2680,10 @@ Software Development
 </section>
 
 
-</main>
 
-
-
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -2287,26 +2716,31 @@ Iqrasys Solutions Limited
 
 
 
-<!-- ================= WHATSAPP ================= -->
+<!-- =====================================================
+     WHATSAPP BUTTON
+===================================================== -->
 
 <a
 class="wa"
 href="https://wa.me/8801712345678?text=Hello%20Titas%20Sadid"
 target="_blank"
-aria-label="WhatsApp"
+title="Chat on WhatsApp"
 >
-
 ◉
-
 </a>
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-/* MOBILE MENU */
+
+/* ==========================
+   MOBILE MENU
+========================== */
 
 const menu =
 document.getElementById("menu");
@@ -2315,38 +2749,49 @@ const links =
 document.getElementById("links");
 
 
-menu.onclick = function(){
+menu.addEventListener(
+"click",
+function(){
 
     links.classList.toggle("show");
 
-};
+});
 
 
-/* CLOSE MOBILE MENU */
+/* ==========================
+   CLOSE MENU
+========================== */
 
 document
 .querySelectorAll(".links a")
 .forEach(function(link){
 
-    link.onclick = function(){
+    link.addEventListener(
+    "click",
+    function(){
 
         links.classList.remove("show");
 
-    };
+    });
 
 });
 
 
-/* SCROLL REVEAL */
+/* ==========================
+   SCROLL REVEAL
+========================== */
 
 const revealObserver =
 new IntersectionObserver(
 
 function(entries){
 
-    entries.forEach(function(entry){
+    entries.forEach(
+    function(entry){
 
-        if(entry.isIntersecting){
+        if(
+            entry.isIntersecting
+        ){
 
             entry.target
             .classList
@@ -2359,35 +2804,42 @@ function(entries){
 },
 {
     threshold:.12
-}
-);
+});
 
 
 document
 .querySelectorAll(".reveal")
-.forEach(function(element){
+.forEach(
+function(element){
 
     revealObserver.observe(element);
 
 });
 
 
-/* SKILL BAR ANIMATION */
+/* ==========================
+   SKILL ANIMATION
+========================== */
 
 const skillObserver =
 new IntersectionObserver(
 
 function(entries){
 
-    entries.forEach(function(entry){
+    entries.forEach(
+    function(entry){
 
-        if(entry.isIntersecting){
+        if(
+            entry.isIntersecting
+        ){
 
             entry.target.style.width =
             entry.target.dataset.w;
 
             skillObserver
-            .unobserve(entry.target);
+            .unobserve(
+                entry.target
+            );
 
         }
 
@@ -2396,27 +2848,31 @@ function(entries){
 },
 {
     threshold:.4
-}
-);
+});
 
 
 document
 .querySelectorAll(".bar i")
-.forEach(function(element){
+.forEach(
+function(element){
 
     skillObserver.observe(element);
 
 });
 
 
-/* CURRENT YEAR */
+/* ==========================
+   YEAR
+========================== */
 
 document
 .getElementById("year")
 .textContent =
 new Date().getFullYear();
 
+
 </script>
+
 
 </body>
 </html>
