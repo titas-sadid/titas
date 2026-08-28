@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Titas Sadid | Software Engineer</title>
+
+<style>
+:root{
+    --bg:#07111f;
+    --bg2:#0b1830;
+    --card:#10233d;
+
+    --cyan:#25f0d0;
+    --blue:#19c3ff;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --gold:#ffd166;
+
+    --white:#f5f9ff;
+    --muted:#9bb0c7;
+    --line:#ffffff18;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 10% 10%,
+        #19c3ff25,
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 90% 20%,
+        #8b5cf625,
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        #25f0d01c,
+        transparent 35%
+    ),
+    var(--bg);
+
+    color:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1140px,92%);
+    margin:auto;
+}
+
+section{
+    padding:100px 0;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    background:#07111fe8;
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid var(--line);
+}
+
+nav{
+    height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-weight:900;
+}
+
+.logoIcon{
+    width:46px;
+    height:46px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    box-shadow:
+    0 0 30px #19c3ff44;
+}
+
+.logo small{
+    display:block;
+
+    color:#7189a2;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+}
+
+.links{
+    display:flex;
+    gap:30px;
+}
+
+.links a{
+    position:relative;
+
+    padding:29px 0;
+
+    color:#9db0c4;
+
+    font-size:11px;
+    font-weight:900;
+
+    transition:.3s;
+}
+
+.links a:hover{
+    color:white;
+}
+
+.links a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:20px;
+
+    width:0;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    transition:.3s;
+}
+
+.links a:hover::after{
+    width:100%;
+}
+
+.menu{
+    display:none;
+
+    color:var(--cyan);
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:700px;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.kicker{
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+}
+
+.hero h1{
+    font-size:
+    clamp(48px,6.5vw,84px);
+
+    line-height:.94;
+
+    letter-spacing:-4px;
+
+    text-transform:uppercase;
+
+    margin-top:16px;
+}
+
+.gradient{
+    background:
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple),
+        var(--pink)
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.heroText{
+    max-width:580px;
+
+    margin:28px 0;
+
+    padding-left:18px;
+
+    border-left:
+    3px solid var(--blue);
+
+    color:var(--muted);
+
+    font-size:15px;
+}
+
+.heroText strong{
+    color:white;
+}
+
+.btns{
+    display:flex;
+
+    gap:13px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:15px 22px;
+
+    border-radius:6px;
+
+    color:#04101c;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    background:
+    linear-gradient(
+        100deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    box-shadow:
+    0 12px 30px #19c3ff22;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 40px #19c3ff35;
+}
+
+.outline{
+    background:transparent;
+
+    color:white;
+
+    border:
+    1px solid #ffffff30;
+
+    box-shadow:none;
+}
+
+
+/* ================= PROFILE IMAGE ================= */
+
+.visual{
+    height:600px;
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+}
+
+.photoBox{
+    width:530px;
+    height:530px;
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+}
+
+
+/* OUTER GLOW */
+
+.photoBox::before{
+    content:"";
+
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    border-radius:50%;
+
+    border:
+    2px solid #19c3ff55;
+
+    box-shadow:
+    0 0 90px #19c3ff20,
+    inset 0 0 80px #8b5cf620;
+}
+
+
+/* ROTATING RING */
+
+.photoBox::after{
+    content:"";
+
+    position:absolute;
+
+    width:515px;
+    height:515px;
+
+    border-radius:50%;
+
+    border:
+    2px dashed #8b5cf677;
+
+    animation:
+    rotate 18s linear infinite;
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* PHOTO */
+
+.photo{
+    width:410px;
+    height:410px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    border-radius:50%;
+
+    border:
+    8px solid white;
+
+    position:relative;
+
+    z-index:3;
+
+    box-shadow:
+    0 0 0 10px #19c3ff18,
+    0 30px 80px #0008;
+
+    animation:
+    floating 5s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-11px);
+    }
+
+}
+
+
+/* ================= FLOATING DOTS ================= */
+
+.dot{
+    position:absolute;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    z-index:6;
+}
+
+.d1{
+    left:30px;
+    top:55px;
+
+    background:var(--cyan);
+
+    box-shadow:
+    0 0 20px var(--cyan);
+
+    animation:
+    move1 4s infinite;
+}
+
+.d2{
+    right:28px;
+    top:110px;
+
+    background:var(--pink);
+
+    box-shadow:
+    0 0 20px var(--pink);
+
+    animation:
+    move2 5s infinite;
+}
+
+.d3{
+    left:65px;
+    bottom:70px;
+
+    background:var(--gold);
+
+    box-shadow:
+    0 0 20px var(--gold);
+
+    animation:
+    move3 4s infinite;
+}
+
+@keyframes move1{
+
+    50%{
+        transform:
+        translate(25px,30px);
+
+        opacity:.35;
+    }
+
+}
+
+@keyframes move2{
+
+    50%{
+        transform:
+        translate(-25px,25px);
+
+        opacity:.4;
+    }
+
+}
+
+@keyframes move3{
+
+    50%{
+        transform:
+        translate(20px,-25px);
+
+        opacity:.45;
+    }
+
+}
+
+
+/* PHOTO BADGE */
+
+.badge{
+    position:absolute;
+
+    right:0;
+    bottom:40px;
+
+    z-index:8;
+
+    padding:14px 20px;
+
+    border-radius:10px;
+
+    background:#10233df5;
+
+    border:
+    1px solid #19c3ff44;
+
+    box-shadow:
+    0 15px 40px #0006;
+}
+
+.badge b{
+    display:block;
+
+    color:var(--cyan);
+
+    font-size:14px;
+}
+
+.badge small{
+    color:#9bb0c7;
+
+    font-size:10px;
+}
+
+
+/* ================= TITLES ================= */
+
+.kicker2{
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+}
+
+.title{
+    font-size:45px;
+
+    line-height:1;
+
+    margin:
+    10px 0 48px;
+
+    text-transform:uppercase;
+}
+
+.title span{
+    background:
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+/* ================= ABOUT ================= */
+
+.grid2{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:60px;
+}
+
+.copy{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.copy p{
+    margin-bottom:18px;
+}
+
+.copy strong{
+    color:white;
+}
+
+.info{
+    display:grid;
+
+    gap:2px;
+
+    background:#19c3ff12;
+
+    border-radius:8px;
+
+    overflow:hidden;
+}
+
+.row{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:17px 19px;
+
+    background:#10233dcc;
+
+    font-size:12px;
+}
+
+.row span{
+    color:#9bb0c7;
+
+    text-align:right;
+}
+
+
+/* ================= SERVICES ================= */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:19px;
+}
+
+.card{
+    padding:30px;
+
+    border:
+    1px solid var(--line);
+
+    border-radius:9px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #102a48e8,
+        #0c1d33e8
+    );
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:
+    translateY(-8px);
+
+    border-color:
+    #19c3ff55;
+
+    box-shadow:
+    0 20px 50px #0005;
+}
+
+.icon{
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+    );
+
+    color:white;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.card p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projectGrid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+    padding:27px;
+
+    border:
+    1px solid var(--line);
+
+    border-radius:9px;
+
+    background:#10233dcc;
+
+    transition:.3s;
+}
+
+.project:hover{
+    transform:
+    translateY(-7px);
+
+    border-color:
+    #8b5cf655;
+}
+
+.tag{
+    color:var(--cyan);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.project h3{
+    margin:
+    10px 0 8px;
+}
+
+.project p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.project a{
+    display:inline-block;
+
+    margin-top:17px;
+
+    color:var(--blue);
+
+    font-size:10px;
+
+    font-weight:900;
+}
+
+
+/* ================= EXPERIENCE ================= */
+
+.timeline{
+    border-left:
+    2px solid #19c3ff66;
+
+    padding-left:30px;
+
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:-7px;
+    top:5px;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+    0 0 0 7px #19c3ff16;
+}
+
+.date{
+    color:var(--gold);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.timeline h3{
+    font-size:31px;
+
+    margin:7px 0;
+}
+
+.timeline h4{
+    color:#b5c7d9;
+
+    margin-bottom:14px;
+}
+
+.timeline p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    max-width:800px;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:50px;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skillTop{
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:9px;
+}
+
+.skillTop span:last-child{
+    color:var(--cyan);
+}
+
+.bar{
+    height:7px;
+
+    background:#19304a;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.bar i{
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    transition:
+    width 1.5s ease;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:45px;
+
+    padding:45px;
+
+    background:
+    linear-gradient(
+        120deg,
+        #102a48ee,
+        #162542ee
+    );
+
+    border:
+    1px solid #19c3ff2b;
+
+    border-radius:12px;
+}
+
+.contact h2{
+    font-size:38px;
+
+    line-height:1.05;
+
+    text-transform:uppercase;
+}
+
+.contact h2 span{
+    color:var(--cyan);
+}
+
+.contact p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin:
+    18px 0 25px;
+}
+
+.items{
+    display:grid;
+
+    gap:13px;
+}
+
+.item{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px;
+
+    border:
+    1px solid var(--line);
+
+    background:#07111f88;
+
+    border-radius:7px;
+
+    transition:.3s;
+}
+
+.item:hover{
+    transform:
+    translateX(5px);
+
+    border-color:
+    #19c3ff55;
+}
+
+.ci{
+    width:42px;
+    height:42px;
+
+    border-radius:10px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+    );
+
+    font-weight:900;
+}
+
+.item small{
+    display:block;
+
+    color:#7189a2;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.item strong{
+    font-size:13px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 0;
+
+    border-top:
+    1px solid var(--line);
+
+    color:#7189a2;
+
+    font-size:11px;
+}
+
+footer .container{
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:var(--cyan);
+}
+
+
+/* ================= WHATSAPP ================= */
+
+.wa{
+    position:fixed;
+
+    right:24px;
+    bottom:24px;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    z-index:999;
+
+    color:white;
+
+    font-size:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #19d879,
+        #08a75b
+    );
+
+    box-shadow:
+    0 12px 35px #19d87944;
+
+    animation:
+    pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        box-shadow:
+        0 12px 35px #19d87944,
+        0 0 0 12px #19d8790d;
+    }
+
+}
+
+
+/* ================= REVEAL ================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+    translateY(28px);
+
+    transition:
+    .8s ease;
+}
+
+.show{
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .links{
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+        left:0;
+
+        width:100%;
+
+        padding:
+        10px 5%;
+
+        background:#07111f;
+
+        flex-direction:column;
+
+        gap:0;
+    }
+
+    .links.show{
+        display:flex;
+    }
+
+    .links a{
+        padding:13px 0;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+
+        min-height:auto;
+    }
+
+    .visual{
+        height:510px;
+    }
+
+    .grid2,
+    .skills,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .cards,
+    .projectGrid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:46px;
+
+        letter-spacing:-2px;
+    }
+
+    .photoBox{
+        width:370px;
+
+        height:420px;
+    }
+
+    .photo{
+        width:315px;
+        height:315px;
+    }
+
+    .photoBox::before{
+        width:355px;
+        height:355px;
+    }
+
+    .photoBox::after{
+        width:380px;
+        height:380px;
+    }
+
+    .badge{
+        right:-5px;
+
+        bottom:20px;
+    }
+
+    .title{
+        font-size:35px;
+    }
+
+    .contact{
+        padding:28px;
+    }
+
+    .contact h2{
+        font-size:31px;
+    }
+
+    footer .container{
+        flex-direction:column;
+
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="container">
+
+<a class="logo" href="#home">
+
+<div class="logoIcon">
+&lt;/&gt;
+</div>
+
+<div>
+
+TITAS SADID
+
+<small>
+SOFTWARE ENGINEER
+</small>
+
+</div>
+
+</a>
+
+
+<div class="links" id="links">
+
+<a href="#home">
+HOME
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="#services">
+SKILLS
+</a>
+
+<a href="#projects">
+PROJECTS
+</a>
+
+<a href="#experience">
+EXPERIENCE
+</a>
+
+<a href="#contact">
+CONTACT
+</a>
+
+</div>
+
+
+<div class="menu" id="menu">
+☰
+</div>
+
+</nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero container" id="home">
+
+
+<div class="reveal">
+
+<div class="kicker">
+SOFTWARE • CODE • TECHNOLOGY
+</div>
+
+
+<h1>
+
+<span class="gradient">
+BUILD
+</span>
+
+<br>
+
+DIGITAL
+
+<br>
+
+<span class="gradient">
+EXPERIENCES.
+</span>
+
+</h1>
+
+
+<p class="heroText">
+
+I’m
+<strong>Titas Sadid</strong>,
+
+a professional
+<strong>Software Engineer</strong>
+at
+<strong>Iqrasys Solutions Limited</strong>.
+
+I build reliable, scalable and
+user-friendly digital solutions
+through clean code and practical
+problem solving.
+
+</p>
+
+
+<div class="btns">
+
+<a
+class="btn"
+href="#projects"
+>
+VIEW MY WORK →
+</a>
+
+
+<a
+class="btn outline"
+href="#contact"
+>
+CONTACT ME
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= PHOTO ================= -->
+
+<div class="visual reveal">
+
+<div class="photoBox">
+
+
+<i class="dot d1"></i>
+
+<i class="dot d2"></i>
+
+<i class="dot d3"></i>
+
+
+<!-- YOUR PHOTO -->
+
+<img
+class="photo"
+src="titas.png"
+alt="Titas Sadid"
+>
+
+
+<div class="badge">
+
+<b>
+SOFTWARE ENGINEER
+</b>
+
+<small>
+IQrasys Solutions Limited
+</small>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="kicker2">
+PROFESSIONAL PROFILE
+</div>
+
+<h2 class="title">
+ABOUT <span>ME</span>
+</h2>
+
+</div>
+
+
+<div class="grid2">
+
+
+<div class="copy reveal">
+
+<p>
+
+Hello! I’m
+<strong>Titas Sadid</strong>,
+
+a Software Engineer working at
+<strong>Iqrasys Solutions Limited</strong>.
+
+</p>
+
+
+<p>
+
+I focus on software development,
+problem solving, application design,
+clean coding and building practical
+digital products.
+
+</p>
+
+
+<p>
+
+My goal is to create software that is
+fast, maintainable, reliable and easy
+for users to understand.
+
+I continuously improve my technical
+skills and follow modern development
+practices.
+
+</p>
+
+</div>
+
+
+
+<div class="info reveal">
+
+
+<div class="row">
+
+<b>
+Full Name
+</b>
+
+<span>
+Titas Sadid
+</span>
+
+</div>
+
+
+<div class="row">
+
+<b>
+Designation
+</b>
+
+<span>
+Software Engineer
+</span>
+
+</div>
+
+
+<div class="row">
+
+<b>
+Company
+</b>
+
+<span>
+Iqrasys Solutions Limited
+</span>
+
+</div>
+
+
+<div class="row">
+
+<b>
+Profession
+</b>
+
+<span>
+Software Engineering
+</span>
+
+</div>
+
+
+<div class="row">
+
+<b>
+Specialization
+</b>
+
+<span>
+Software Development
+</span>
+
+</div>
+
+
+<div class="row">
+
+<b>
+Focus
+</b>
+
+<span>
+Digital Solutions
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="kicker2">
+CORE COMPETENCIES
+</div>
+
+<h2 class="title">
+WHAT I <span>DO</span>
+</h2>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card reveal">
+
+<div class="icon">
+&lt;/&gt;
+</div>
+
+<h3>
+Software Development
+</h3>
+
+<p>
+Building clean, maintainable and
+practical software solutions for
+real-world requirements.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+⌘
+</div>
+
+<h3>
+Problem Solving
+</h3>
+
+<p>
+Breaking complex requirements into
+efficient and understandable
+technical solutions.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+⚙
+</div>
+
+<h3>
+Application Design
+</h3>
+
+<p>
+Designing user-friendly application
+structures with performance and
+maintainability in mind.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+DB
+</div>
+
+<h3>
+Database Solutions
+</h3>
+
+<p>
+Working with structured data and
+building reliable data-driven
+application workflows.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+API
+</div>
+
+<h3>
+API Integration
+</h3>
+
+<p>
+Connecting applications and services
+through clean API-based workflows.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+✓
+</div>
+
+<h3>
+Testing & Debugging
+</h3>
+
+<p>
+Finding issues, improving reliability
+and helping applications deliver
+better experiences.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="kicker2">
+SELECTED WORK
+</div>
+
+<h2 class="title">
+MY <span>PROJECTS</span>
+</h2>
+
+</div>
+
+
+<div class="projectGrid">
+
+
+<div class="project reveal">
+
+<div class="tag">
+WEB APPLICATION
+</div>
+
+<h3>
+Business Management System
+</h3>
+
+<p>
+A modern software concept for
+managing business operations,
+users, records and workflows.
+</p>
+
+<a href="#contact">
+DISCUSS PROJECT →
+</a>
+
+</div>
+
+
+
+<div class="project reveal">
+
+<div class="tag">
+SOFTWARE SOLUTION
+</div>
+
+<h3>
+Smart Digital Platform
+</h3>
+
+<p>
+A scalable digital platform concept
+focused on performance, usability
+and clean interface design.
+</p>
+
+<a href="#contact">
+DISCUSS PROJECT →
+</a>
+
+</div>
+
+
+
+<div class="project reveal">
+
+<div class="tag">
+AUTOMATION
+</div>
+
+<h3>
+Workflow Automation
+</h3>
+
+<p>
+Automating repetitive processes to
+reduce manual work and improve
+organizational efficiency.
+</p>
+
+<a href="#contact">
+DISCUSS PROJECT →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="kicker2">
+CAREER JOURNEY
+</div>
+
+<h2 class="title">
+WORK <span>EXPERIENCE</span>
+</h2>
+
+</div>
+
+
+<div class="timeline reveal">
+
+
+<div class="date">
+CURRENT POSITION
+</div>
+
+
+<h3>
+Software Engineer
+</h3>
+
+
+<h4>
+Iqrasys Solutions Limited
+</h4>
+
+
+<p>
+
+Working on software development,
+technical problem solving,
+application improvement,
+system workflows and reliable
+software delivery.
+
+Contributing to digital solutions
+with a focus on clean code,
+performance and maintainability.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="kicker2">
+TECHNICAL STRENGTHS
+</div>
+
+<h2 class="title">
+MY <span>SKILLS</span>
+</h2>
+
+</div>
+
+
+<div class="skills">
+
+
+<div>
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+Software Development
+</span>
+
+<span>
+94%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="94%"></i>
+
+</div>
+
+</div>
+
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+Problem Solving
+</span>
+
+<span>
+92%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="92%"></i>
+
+</div>
+
+</div>
+
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+Web Development
+</span>
+
+<span>
+90%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="90%"></i>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+Database
+</span>
+
+<span>
+87%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="87%"></i>
+
+</div>
+
+</div>
+
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+API Integration
+</span>
+
+<span>
+88%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="88%"></i>
+
+</div>
+
+</div>
+
+
+
+<div class="skill reveal">
+
+<div class="skillTop">
+
+<span>
+Debugging
+</span>
+
+<span>
+91%
+</span>
+
+</div>
+
+<div class="bar">
+
+<i data-w="91%"></i>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+
+<div class="contact reveal">
+
+
+<div>
+
+<div class="kicker2">
+LET'S CONNECT
+</div>
+
+
+<h2>
+
+HAVE AN IDEA?
+
+<br>
+
+<span>
+LET'S BUILD IT.
+</span>
+
+</h2>
+
+
+<p>
+
+For software development
+opportunities, technical
+collaboration or project
+discussions, feel free to
+get in touch.
+
+</p>
+
+
+<div class="btns">
+
+<a
+class="btn"
+href="mailto:titassadid@example.com"
+>
+SEND EMAIL →
+</a>
+
+
+<a
+class="btn outline"
+href="#home"
+>
+BACK TO TOP
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="items">
+
+
+<div class="item">
+
+<div class="ci">
+@
+</div>
+
+<div>
+
+<small>
+EMAIL
+</small>
+
+<strong>
+titassadid@example.com
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="item">
+
+<div class="ci">
+&lt;/&gt;
+</div>
+
+<div>
+
+<small>
+PROFESSION
+</small>
+
+<strong>
+Software Engineer
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="item">
+
+<div class="ci">
+IQ
+</div>
+
+<div>
+
+<small>
+COMPANY
+</small>
+
+<strong>
+Iqrasys Solutions Limited
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="item">
+
+<div class="ci">
+◆
+</div>
+
+<div>
+
+<small>
+SPECIALIZATION
+</small>
+
+<strong>
+Software Development
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div>
+
+©
+<span id="year"></span>
+
+Titas Sadid.
+All Rights Reserved.
+
+</div>
+
+
+<div>
+
+Software Engineer •
+
+<span>
+Iqrasys Solutions Limited
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+class="wa"
+href="https://wa.me/8801712345678?text=Hello%20Titas%20Sadid"
+target="_blank"
+aria-label="WhatsApp"
+>
+
+◉
+
+</a>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* MOBILE MENU */
+
+const menu =
+document.getElementById("menu");
+
+const links =
+document.getElementById("links");
+
+
+menu.onclick = function(){
+
+    links.classList.toggle("show");
+
+};
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".links a")
+.forEach(function(link){
+
+    link.onclick = function(){
+
+        links.classList.remove("show");
+
+    };
+
+});
+
+
+/* SCROLL REVEAL */
+
+const revealObserver =
+new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("show");
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+}
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+/* SKILL BAR ANIMATION */
+
+const skillObserver =
+new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.style.width =
+            entry.target.dataset.w;
+
+            skillObserver
+            .unobserve(entry.target);
+
+        }
+
+    });
+
+},
+{
+    threshold:.4
+}
+);
+
+
+document
+.querySelectorAll(".bar i")
+.forEach(function(element){
+
+    skillObserver.observe(element);
+
+});
+
+
+/* CURRENT YEAR */
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
